@@ -1,0 +1,70 @@
+{
+    "John Banville": [
+        {
+            "book": "The Sea",
+            "publication_date": "2006"
+        },
+        {
+            "book": "The Sea2",
+            "publication_date": "2005"
+        },
+        {
+            "book": "Ghosts",
+            "publication_date": "1998"
+        },
+        {
+            "book": "Ghosts2",
+            "publication_date": "1998"
+        },
+        {
+            "book": "Ghosts3",
+            "publication_date": "1998"
+        }
+    ],
+    "Zadie Smith": [
+        {
+            "book": "On Beauty",
+            "publication_date": "2006"
+        },
+        {
+            "book": "The Autograph Man",
+            "publication_date": "2003"
+        },
+        {
+            "book": "White Teeth",
+            "publication_date": "2001"
+        }
+    ],
+    "Anna Sewell": [
+        {
+            "book": "Black Beauty",
+            "publication_date": "2003"
+        }
+    ],
+    "Ann Patchett": [
+        {
+            "book": "Truth and Beauty",
+            "publication_date": "2005"
+        }
+    ],
+    "Graham Greene": [
+        {
+            "book": "The Tenth Man",
+            "publication_date": "1998"
+        }
+    ],
+    "Chuck Palahniuk": [
+        {
+            "book": "Stranger than Fiction",
+            "publication_date": "2005"
+        },
+        {
+            "book": "Stranger2",
+            "publication_date": "2005"
+        },
+        {
+            "book": "Fiction3",
+            "publication_date": "2005"
+        }
+    ]
+}

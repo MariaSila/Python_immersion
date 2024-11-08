@@ -1,0 +1,121 @@
+[
+    {
+        "name": "99.txt",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\78\\99.txt",
+        "type": "file",
+        "size": 9,
+        "parent": "78"
+    },
+    {
+        "name": "456.txt",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\123\\456.txt",
+        "type": "file",
+        "size": 29,
+        "parent": "123"
+    },
+    {
+        "name": "123",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\123",
+        "type": "directory",
+        "size": 29,
+        "parent": "task_1"
+    },
+    {
+        "name": "convert.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\convert.py",
+        "type": "file",
+        "size": 2166,
+        "parent": "task_1"
+    },
+    {
+        "name": "create_files.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\create_files.py",
+        "type": "file",
+        "size": 1719,
+        "parent": "task_1"
+    },
+    {
+        "name": "generate_name.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\generate_name.py",
+        "type": "file",
+        "size": 1564,
+        "parent": "task_1"
+    },
+    {
+        "name": "gen_files.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\gen_files.py",
+        "type": "file",
+        "size": 1475,
+        "parent": "task_1"
+    },
+    {
+        "name": "gen_files_to_dir.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\gen_files_to_dir.py",
+        "type": "file",
+        "size": 1745,
+        "parent": "task_1"
+    },
+    {
+        "name": "renaming_files.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\renaming_files.py",
+        "type": "file",
+        "size": 6463,
+        "parent": "task_1"
+    },
+    {
+        "name": "sort_files.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\sort_files.py",
+        "type": "file",
+        "size": 1324,
+        "parent": "task_1"
+    },
+    {
+        "name": "write_file_random.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\write_file_random.py",
+        "type": "file",
+        "size": 1059,
+        "parent": "task_1"
+    },
+    {
+        "name": "__init__.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1\\__init__.py",
+        "type": "file",
+        "size": 155,
+        "parent": "task_1"
+    },
+    {
+        "name": "78",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\78",
+        "type": "directory",
+        "size": 9,
+        "parent": "hw_7"
+    },
+    {
+        "name": "delete_files.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\delete_files.py",
+        "type": "file",
+        "size": 4711,
+        "parent": "hw_7"
+    },
+    {
+        "name": "find_files.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\find_files.py",
+        "type": "file",
+        "size": 3314,
+        "parent": "hw_7"
+    },
+    {
+        "name": "task_1",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\task_1",
+        "type": "directory",
+        "size": 17699,
+        "parent": "hw_7"
+    },
+    {
+        "name": "zip_dir.py",
+        "path": "C:\\Users\\user\\Python_immersion\\hw_7\\zip_dir.py",
+        "type": "file",
+        "size": 4418,
+        "parent": "hw_7"
+    }
+]
