@@ -1,0 +1,104 @@
+ERROR:root:DepressionError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+DepressionError: Депрессия. Уровень кармы 8
+ERROR:root:CarCrashError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+CarCrashError: Автомобильная авария. Уровень кармы 73
+ERROR:root:DrunkError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+DrunkError: Пьянство. Уровень кармы 98
+ERROR:root:KillError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+KillError: Убийство. Уровень кармы 136
+ERROR:root:DrunkError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+DrunkError: Пьянство. Уровень кармы 191
+ERROR:root:DrunkError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+DrunkError: Пьянство. Уровень кармы 206
+ERROR:root:GluttonyError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+GluttonyError: Обжорство. Уровень кармы 261
+ERROR:root:KillError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+KillError: Убийство. Уровень кармы 341
+ERROR:root:DrunkError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+DrunkError: Пьянство. Уровень кармы 351
+ERROR:root:DepressionError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+DepressionError: Депрессия. Уровень кармы 363
+ERROR:root:GluttonyError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+GluttonyError: Обжорство. Уровень кармы 364
+ERROR:root:GluttonyError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+GluttonyError: Обжорство. Уровень кармы 400
+ERROR:root:DepressionError
+Traceback (most recent call last):
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 110, in <module>
+    cnt = one_day()
+          ^^^^^^^^^
+  File "C:\Users\user\Python_immersion\hw_13\task_1.py", line 99, in one_day
+    raise e(karma)
+DepressionError: Депрессия. Уровень кармы 445
