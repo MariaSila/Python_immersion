@@ -1,23 +1,42 @@
-# Задача 5. Запуск из командной строки
-# Напишите код, который запускается из командной строки и получает на вход путь
-# до директории на ПК. Соберите информацию о содержимом в виде объектов
-# namedtuple. Каждый объект хранит: имя файла без расширения или название
-# каталога, расширение, если это файл, флаг каталога, название родительского
-# каталога. В процессе сбора сохраните данные в текстовый файл используя
-# логирование.
-# Подсказка № 1
-#   Используйте функцию os.path.join() для правильного построения путей к файлам
-#   и каталогам в зависимости от операционной системы.
-# Подсказка № 2
-#   Используйте os.path.isdir() для проверки, является ли указанный путь
-#   директорией перед тем как пытаться получить его содержимое.
-# Подсказка № 3
-#   Используйте os.path.splitext() для разделения имени файла на основную часть
-#   и расширение, где расширение можно очистить от начальной точки.
-# Подсказка № 4
-#   Используйте logging.basicConfig() для настройки логирования, указав уровень
-#   логирования и формат сообщений.
-# Подсказка № 5
-#   Определите namedtuple для хранения информации о файлах и каталогах, что
-#   позволяет легко управлять структурой данных и логированием.
+from pathlib import Path
+from os import walk, path
+from collections import namedtuple
+import logging
+import argparse
 
+Dir_info = namedtuple('Dir_info', ['name', 'extension', 'type', 'parent'])
+
+
+logging.basicConfig(filename='log.log',
+                    encoding='utf-8',
+                    format='{levelname}: {msg}',
+                    style='{',
+                    level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+
+def obj_dir(directory):
+    if isinstance(directory, str):
+        directory = Path(directory)
+    if not path.isdir(directory):
+        raise ValueError(f'Директория {directory} не найдена')
+
+    for root, dirs, files in walk(directory):
+        for name in dirs + files:
+            path_d = path.join(root, name)
+            if path.isdir(path_d):
+                info_dir = Dir_info(name, None, 'Directory', path.basename(root))
+            else:
+                new_name = name[:name.find('.')]
+                ext = name[name.find('.') + 1:]
+                info_dir = Dir_info(new_name, ext, 'File', path.basename(root))
+
+            logger.info(f'Name: {info_dir.name}, extension: {info_dir.extension}, '
+                        f'type: {info_dir.type}, parent: {info_dir.parent}')
+
+
+if __name__ == '__main__':
+    try:
+        obj_dir(Path.cwd())
+    except ValueError as e:
+        print(e)
