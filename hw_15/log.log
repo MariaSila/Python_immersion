@@ -1,0 +1,10 @@
+INFO: Name: __pycache__, extension: None, type: Directory, parent: hw_15
+INFO: Name: debug_info, extension: log, type: File, parent: hw_15
+INFO: Name: log, extension: log, type: File, parent: hw_15
+INFO: Name: task_1, extension: py, type: File, parent: hw_15
+INFO: Name: task_2, extension: py, type: File, parent: hw_15
+INFO: Name: task_3, extension: py, type: File, parent: hw_15
+INFO: Name: task_4, extension: py, type: File, parent: hw_15
+INFO: Name: task_5, extension: py, type: File, parent: hw_15
+INFO: Name: warnings_errors, extension: log, type: File, parent: hw_15
+INFO: Name: task_3, extension: cpython-312.pyc, type: File, parent: __pycache__
