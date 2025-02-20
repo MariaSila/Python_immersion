@@ -1,0 +1,18 @@
+__all__ = ['Skills']
+
+class Skills():
+    # lst_pet_skills = ['Name', 'Walk', 'Paw', 'Sit', 'Stand', 'Jump', 'Speak', 'Heel',
+    #               'Down', 'Come', 'Fetch', 'Go', 'No', 'Hunt', 'Place', 'Hide']
+    # lst_pack_animals_skills = ['Name',]
+    dict_skills = {'pets': ['Name', 'Walk', 'Paw', 'Sit', 'Stand', 'Jump', 'Speak', 'Heel',
+                            'Down', 'Come', 'Fetch', 'Go', 'No', 'Hunt', 'Place', 'Hide'],
+                   'pack_animals': ['Name', 'Trot', 'Gallop', 'Walk', 'Calm', 'Turn', 'Stop', 'Jamp']}
+
+    def __init__(self):
+        self.skills = []
+
+    def __str__(self):
+        return f'skills:{self.skills}'
+
+    def __repr__(self):
+        return f'{__class__.__name__}:{self.skills}'
