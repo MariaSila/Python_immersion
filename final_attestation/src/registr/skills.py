@@ -1,9 +1,7 @@
-__all__ = ['Skills']
+__all__ = ['Skill']
 
-class Skills():
-    # lst_pet_skills = ['Name', 'Walk', 'Paw', 'Sit', 'Stand', 'Jump', 'Speak', 'Heel',
-    #               'Down', 'Come', 'Fetch', 'Go', 'No', 'Hunt', 'Place', 'Hide']
-    # lst_pack_animals_skills = ['Name',]
+
+class Skill:
     dict_skills = {'pets': ['Name', 'Walk', 'Paw', 'Sit', 'Stand', 'Jump', 'Speak', 'Heel',
                             'Down', 'Come', 'Fetch', 'Go', 'No', 'Hunt', 'Place', 'Hide'],
                    'pack_animals': ['Name', 'Trot', 'Gallop', 'Walk', 'Calm', 'Turn', 'Stop', 'Jamp']}

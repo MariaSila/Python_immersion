@@ -1,1 +1,1 @@
-__all__ = ['animals', 'pack_animals', 'pets', 'skills', 'main']
+__all__ = ['animals', 'pack_animals', 'pets', 'skills', 'main', 'factory']

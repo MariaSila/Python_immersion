@@ -1,16 +1,16 @@
-from skills import Skills
+from final_attestation.src.registr.skills import Skill
 
 __all__ = ['Animal']
 
 
-class Animal():
+class Animal:
     _count = 0
     _lst_animals = []
 
     def __init__(self, name, birthday):
         self.name = name
         self.birthday = birthday
-        self.skills = Skills()
+        self.skills = Skill()
         self._lst_animals.append(self)
         Animal._count += 1
 
@@ -23,4 +23,3 @@ class Animal():
     @property
     def lst_animals(cls):
         return f'List animals: {cls._lst_animals}'
-
