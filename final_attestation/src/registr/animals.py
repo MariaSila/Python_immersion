@@ -1,25 +1,25 @@
-from final_attestation.src.registr.skills import Skill
+from skills import Skill
+
 
 __all__ = ['Animal']
 
 
 class Animal:
-    _count = 0
     _lst_animals = []
 
-    def __init__(self, name, birthday):
+    def __init__(self, name, birthday, skills=None):
         self.name = name
         self.birthday = birthday
-        self.skills = Skill()
+        self.skills = [] if skills is None else skills
         self._lst_animals.append(self)
-        Animal._count += 1
-
-    @classmethod
-    @property
-    def count(cls):
-        return f'Total animals: {cls._count}'
 
     @classmethod
     @property
     def lst_animals(cls):
-        return f'List animals: {cls._lst_animals}'
+        return cls._lst_animals
+
+    def __call__(self, *args):
+        for i in args:
+            self.skills.append(i)
+        return self.skills
+

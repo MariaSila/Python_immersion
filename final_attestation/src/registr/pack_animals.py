@@ -16,7 +16,7 @@ class Horse(PackAnimal):
         return f'{__class__.__name__}({self.name})'
 
     def __str__(self):
-        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, {self.skills}'
+        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, skills:{self.skills}'
 
 
 class Donkey(PackAnimal):
@@ -27,7 +27,7 @@ class Donkey(PackAnimal):
         return f'{__class__.__name__}({self.name})'
 
     def __str__(self):
-        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, {self.skills}'
+        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, skills:{self.skills}'
 
 
 class Camel(PackAnimal):
@@ -38,4 +38,4 @@ class Camel(PackAnimal):
         return f'{__class__.__name__}({self.name})'
 
     def __str__(self):
-        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, {self.skills}'
+        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, skills:{self.skills}'

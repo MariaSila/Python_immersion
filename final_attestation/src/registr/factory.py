@@ -1,11 +1,8 @@
 from typing import Callable
 from animals import Animal
+from exceptions import ClassNotFoundError
 
 __all__ = ['get_subclass']
-
-
-class ClassNotFoundError(Exception):
-    pass
 
 
 parent = Animal
