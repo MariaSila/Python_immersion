@@ -12,30 +12,12 @@ class Horse(PackAnimal):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-    def __repr__(self):
-        return f'{__class__.__name__}({self.name})'
-
-    def __str__(self):
-        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, skills:{self.skills}'
-
 
 class Donkey(PackAnimal):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-    def __repr__(self):
-        return f'{__class__.__name__}({self.name})'
-
-    def __str__(self):
-        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, skills:{self.skills}'
-
 
 class Camel(PackAnimal):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
-    def __repr__(self):
-        return f'{__class__.__name__}({self.name})'
-
-    def __str__(self):
-        return f'{__class__.__name__}: {self.name}, birthday:{self.birthday}, skills:{self.skills}'

@@ -1,8 +1,10 @@
 from typing import Callable
 from animals import Animal
 from exceptions import ClassNotFoundError
+from pets import Dog, Cat, Hamster
+from pack_animals import Horse, Camel, Donkey
 
-__all__ = ['get_subclass']
+__all__ = ['get_subclass', 'Factory', 'get']
 
 
 parent = Animal
@@ -32,7 +34,7 @@ def get(class_name: str) -> object:
     if class_ is not None:
         return class_
 
-    raise ClassNotFoundError
+    raise ClassNotFoundError(class_name)
 
 
 
