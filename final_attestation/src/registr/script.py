@@ -1,8 +1,8 @@
-import main
 from exceptions import UserException
+from menu import Menu
 
 if __name__ == '__main__':
     try:
-        main.main()
+        Menu()
     except UserException as e:
         print(e)

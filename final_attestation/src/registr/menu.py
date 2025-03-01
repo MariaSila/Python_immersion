@@ -3,9 +3,9 @@ from pets import Dog, Cat, Hamster
 from pack_animals import Horse, Camel, Donkey
 from exceptions import UserException, NameNotFoundError, InputError
 from factory import Factory
-from subclasses_ import lst_subclasses
+from subclasses_ import Subclasses_
 
-__all__ = ['add_animal', 'get_skills_animal', 'teach_cmd', 'get_lst_animal', 'get_count', 'found_animal', 'main']
+__all__ = ['add_animal', 'get_skills_animal', 'teach_cmd', 'get_lst_animal', 'get_count', 'found_animal', 'Menu']
 
 parent = Animal
 
@@ -47,7 +47,7 @@ def found_animal(class_name, name):
         raise NameNotFoundError(class_name, name)
 
 
-def main():
+class Menu():
     def actions_with_animal(cls, name):
         while True:
             act = input("""Выберите действие:
@@ -76,7 +76,7 @@ def main():
                     print("Введены не корректные данные")
 
     def select_subclass(parent):
-        cls_ = lst_subclasses(parent)
+        cls_ = Subclasses_.lst_subclasses(parent)
         lst = [i.__name__ for i in cls_]
         print('Доступные виды: ')
         for i, el in enumerate(lst):
@@ -104,8 +104,8 @@ def main():
                 animal = add_animal(cls_name, name, birthday, skills)
                 print(animal)
             case '2':
-                cls_name = input('Имя класса: ')
-                name = input('Имя животного: ')
+                cls_name = input('Вид: ')
+                name = input('Имя: ')
                 actions_with_animal(cls_name, name)
             case '3':
                 print(get_lst_animal(parent.lst_animals))
@@ -121,6 +121,6 @@ def main():
 
 if __name__ == '__main__':
     try:
-        main()
+        Menu()
     except UserException as e:
         print(e)
