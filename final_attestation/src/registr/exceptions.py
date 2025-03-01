@@ -1,4 +1,4 @@
-__all__ = ['UserException', 'ClassNotFoundError', 'NameNotFoundError', 'NameError', 'DataError']
+__all__ = ['UserException', 'ClassNotFoundError', 'NameNotFoundError', 'NameError', 'DataError', 'InputError']
 
 
 class UserException(Exception):
@@ -30,3 +30,11 @@ class NameError(UserException):
 class DataError(UserException):
     def __str__(self):
         return 'Некорректная дата. Проверьте дату и формат гггг-мм-дд'
+
+
+class InputError(UserException):
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f'Неккоретный ввод данных. Ожидается диапазон от 1 до {self.value} включительно'

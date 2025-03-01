@@ -1,11 +1,13 @@
 from animals import Animal
 from pets import Dog, Cat, Hamster
 from pack_animals import Horse, Camel, Donkey
-from exceptions import UserException, NameNotFoundError
+from exceptions import UserException, NameNotFoundError, InputError
 from factory import Factory
-
+from subclasses_ import lst_subclasses
 
 __all__ = ['add_animal', 'get_skills_animal', 'teach_cmd', 'get_lst_animal', 'get_count', 'found_animal', 'main']
+
+parent = Animal
 
 
 def add_animal(cls_name, name, birthday, *args):
@@ -30,13 +32,13 @@ def get_lst_animal(data):
 
 
 def get_count():
-    return len(Animal.lst_animals)
+    return len(parent.lst_animals)
 
 
 def found_animal(class_name, name):
-    lst_animal = Animal.lst_animals
+    # lst_animal = parent.lst_animals
     flag = False
-    for el in lst_animal:
+    for el in parent.lst_animals:
         if el.__class__.__name__ == class_name:
             if el.name == name:
                 flag = True
@@ -73,6 +75,17 @@ def main():
                 case _:
                     print("Введены не корректные данные")
 
+    def select_subclass(parent):
+        cls_ = lst_subclasses(parent)
+        lst = [i.__name__ for i in cls_]
+        print('Доступные виды: ')
+        for i, el in enumerate(lst):
+            print(f'{i + 1}. {el}')
+        answer = int(input('Введите номер вида: '))
+        if len(lst) < answer < len(lst):
+            raise InputError(len(lst))
+        return cls_[answer - 1]
+
     while True:
         action = input("""Выберите действие:
 1. Добавить животное
@@ -83,7 +96,8 @@ def main():
 """)
         match action:
             case '1':
-                cls_name = input('Имя класса: ')
+                sub = select_subclass(parent)
+                cls_name = select_subclass(sub).__name__
                 name = input('Имя животного: ')
                 birthday = input('Дата рождения в формате гггг-мм-дд: ')
                 skills = list(input('Навыки при наличии через пробел: ').split())
@@ -94,7 +108,7 @@ def main():
                 name = input('Имя животного: ')
                 actions_with_animal(cls_name, name)
             case '3':
-                print(get_lst_animal(Animal.lst_animals))
+                print(get_lst_animal(parent.lst_animals))
             case '4':
                 count = get_count()
                 print(f'Количество животных в реестре: {count}')
