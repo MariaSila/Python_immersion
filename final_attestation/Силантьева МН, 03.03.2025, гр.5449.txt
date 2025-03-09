@@ -1,4 +1,4 @@
-   36  ls
+ï»¿   36  ls
    37  cat Pets
    38  ls
    39  cat > Pets
@@ -347,8 +347,8 @@ mysql> select * from camel;
 +----+--------+------------+------------+
 6 rows in set (0,00 sec)
 
-mysql> -- Çàäàíèå: Îáúåäèíèòü âñå ñîçäàííûå òàáëèöû â îäíó, ñîõðàíÿÿ èíôîðìàöèþ
-î ïðèíàäëåæíîñòè ê èñõîäíûì òàáëèöàì
+mysql> -- Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ: ÐžÐ±ÑŠÐµÐ´Ð¸Ð½Ð¸Ñ‚ÑŒ Ð²ÑÐµ ÑÐ¾Ð·Ð´Ð°Ð½Ð½Ñ‹Ðµ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹ Ð² Ð¾Ð´Ð½Ñƒ, ÑÐ¾Ñ…Ñ€Ð°Ð½ÑÑ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ
+Ð¾ Ð¿Ñ€Ð¸Ð½Ð°Ð´Ð»ÐµÐ¶Ð½Ð¾ÑÑ‚Ð¸ Ðº Ð¸ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¼ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð°Ð¼
 mysql> INSERT INTO pet (name, type, birthdate, skill)
     -> select name, 'Cat' as type, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from cat GROUP BY name, birthdate UNION ALL
     -> select name, 'Dog' as type, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from dog GROUP BY name, birthdate UNION ALL
@@ -423,7 +423,7 @@ mysql> select * from animal;
 +----+----------+-------------+---------+------------+------------------------+
 17 rows in set (0,00 sec)
 
-mysql> -- Çàäàíèå: Ñîçäàòü íîâóþ òàáëèöó äëÿ æèâîòíûõ â âîçðàñòå îò 1 äî 3 ëåò è âû÷èñëèòü èõ âîçðàñò ñ òî÷íîñòüþ äî ìåñÿöà.
+mysql> -- Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ: Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð½Ð¾Ð²ÑƒÑŽ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ Ð´Ð»Ñ Ð¶Ð¸Ð²Ð¾Ñ‚Ð½Ñ‹Ñ… Ð² Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ðµ Ð¾Ñ‚ 1 Ð´Ð¾ 3 Ð»ÐµÑ‚ Ð¸ Ð²Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÑŒ Ð¸Ñ… Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ñ Ñ‚Ð¾Ñ‡Ð½Ð¾ÑÑ‚ÑŒÑŽ Ð´Ð¾ Ð¼ÐµÑÑÑ†Ð°.
 mysql> CREATE TABLE young (
     -> id INT AUTO_INCREMENT PRIMARY KEY,
     -> name varchar(20),
@@ -460,8 +460,8 @@ mysql> INSERT INTO young (name, class, type, birthdate, skill, age)
     -> birthdate, 
     -> skill, 
     -> CONCAT (
-    -> FLOOR((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) / 12)), ' ã ',
-    -> MOD(TIMESTAMPDIFF(MONTH, birthdate, CURDATE()), 12) , ' ì') AS age 
+    -> FLOOR((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) / 12)), ' Ð³ ',
+    -> MOD(TIMESTAMPDIFF(MONTH, birthdate, CURDATE()), 12) , ' Ð¼') AS age 
     -> from animal WHERE TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) BETWEEN 1 AND 2;
 Query OK, 5 rows affected (0,02 sec)
 Records: 5  Duplicates: 0  Warnings: 0
@@ -470,15 +470,15 @@ mysql> select * from young;
 +----+----------+-------+------+------------+-----------+----------------------+
 | id | name     | class | type | birthdate  | age       | skill                |
 +----+----------+-------+------+------------+-----------+----------------------+
-|  1 | Oliver   | Pet   | Cat  | 2023-06-30 | 1 ã 8 ì   | Meow, Scratch, Jump  |
-|  2 | Smudge   | Pet   | Cat  | 2023-02-20 | 2 ã 0 ì   | Sit, Pounce, Scratch |
-|  3 | Whiskers | Pet   | Cat  | 2022-05-15 | 2 ã 9 ì   | Sit, Pounce          |
-|  4 | Bella    | Pet   | Dog  | 2022-11-11 | 2 ã 3 ì   | Sit, Roll            |
-|  5 | Fido     | Pet   | Dog  | 2023-01-01 | 2 ã 2 ì   | Sit, Stay, Fetch     |
+|  1 | Oliver   | Pet   | Cat  | 2023-06-30 | 1 Ð³ 8 Ð¼   | Meow, Scratch, Jump  |
+|  2 | Smudge   | Pet   | Cat  | 2023-02-20 | 2 Ð³ 0 Ð¼   | Sit, Pounce, Scratch |
+|  3 | Whiskers | Pet   | Cat  | 2022-05-15 | 2 Ð³ 9 Ð¼   | Sit, Pounce          |
+|  4 | Bella    | Pet   | Dog  | 2022-11-11 | 2 Ð³ 3 Ð¼   | Sit, Roll            |
+|  5 | Fido     | Pet   | Dog  | 2023-01-01 | 2 Ð³ 2 Ð¼   | Sit, Stay, Fetch     |
 +----+----------+-------+------+------------+-----------+----------------------+
 5 rows in set (0,00 sec)
 
-mysql> -- Çàäàíèå: Óäàëèòü çàïèñè î âåðáëþäàõ è îáúåäèíèòü òàáëèöû ëîøàäåé è îñëîâ
+mysql> -- Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ: Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÐ¸ Ð¾ Ð²ÐµÑ€Ð±Ð»ÑŽÐ´Ð°Ñ… Ð¸ Ð¾Ð±ÑŠÐµÐ´Ð¸Ð½Ð¸Ñ‚ÑŒ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹ Ð»Ð¾ÑˆÐ°Ð´ÐµÐ¹ Ð¸ Ð¾ÑÐ»Ð¾Ð²
 mysql> DELETE FROM pack_animal WHERE type = 'Camel';
 Query OK, 3 rows affected (0,01 sec)
 
