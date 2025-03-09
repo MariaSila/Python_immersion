@@ -1,0 +1,498 @@
+   36  ls
+   37  cat Pets
+   38  ls
+   39  cat > Pets
+   40  cat > PackAnimals
+   41  cat Pets PackAnimals > Animal
+   42  cat Animal 
+   43  mv PackAnimals HumanFriends
+   44  ls
+   45  mkdir Registry
+   46  ls
+   47  mv HumanFriends Registry/
+   48  ls
+   49  cd Registry/
+   50  ls
+   51  cd ..
+   52  sudo apt update
+   53  sudo apt install mysql server -y
+   54  sudo apt install mysql-server -y
+   55  sudo ss -ntlp
+   56  sudo mysql -u root -p
+   57  apt download p7zip-full
+   58  sudo dpkg -s p7zip-full
+   59  sudo dpkg -i p7zip-full_16.02+dfsg-8_amd64.deb 
+   60  sudo dpkg -s p7zip-full 
+   61  sudo dpkg -r p7zip-full 
+   62  sudo dpkg -s p7zip-full 
+
+user@userpc:~$ sudo mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.41-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0,00 sec)
+
+mysql> create database HumanFriends;
+Query OK, 1 row affected (0,02 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| HumanFriends       |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0,00 sec)
+
+mysql> use humanFriends;
+ERROR 1049 (42000): Unknown database 'humanFriends'
+mysql> use HumanFriends;
+Database changed
+mysql> CREATE TABLE cat (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20) NOT NULL,
+    -> birthdate date DEFAULT NULL,
+    -> skill varchar(20) DEFAULT NULL
+    -> );
+Query OK, 0 rows affected (0,07 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_HumanFriends |
++------------------------+
+| cat                    |
++------------------------+
+1 row in set (0,00 sec)
+
+mysql> CREATE TABLE dog (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20) NOT NULL,
+    -> birthdate date DEFAULT NULL,
+    -> skill varchar(20) DEFAULT NULL
+    -> );
+Query OK, 0 rows affected (0,30 sec)
+
+mysql> CREATE TABLE hamster (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(20) NOT NULL,
+    -> birthdate DATE DEFAULT NULL,
+    -> skill VARCHAR(20) DEFAULT NULL
+    -> );
+Query OK, 0 rows affected (0,08 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_HumanFriends |
++------------------------+
+| cat                    |
+| dog                    |
+| hamster                |
++------------------------+
+3 rows in set (0,01 sec)
+
+mysql> CREATE TABLE horse (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20) NOT NULL,
+    -> birthdate date DEFAULT NULL,
+    -> skill varchar(20) DEFAULT NULL
+    -> );
+Query OK, 0 rows affected (0,06 sec)
+
+mysql> CREATE TABLE donkey (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20) NOT NULL,
+    -> birthdate date DEFAULT NULL,
+    -> skill varchar(20) DEFAULT NULL
+    -> );
+Query OK, 0 rows affected (0,06 sec)
+
+mysql> CREATE TABLE camel (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20) NOT NULL,
+    -> birthdate date DEFAULT NULL,
+    -> skill varchar(20) DEFAULT NULL
+    -> );
+Query OK, 0 rows affected (0,06 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_HumanFriends |
++------------------------+
+| camel                  |
+| cat                    |
+| dog                    |
+| donkey                 |
+| hamster                |
+| horse                  |
++------------------------+
+6 rows in set (0,01 sec)
+
+mysql> CREATE TABLE pet (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20),
+    -> type varchar(20),
+    -> birthdate date,
+    -> skill varchar(200)
+    -> );
+Query OK, 0 rows affected (0,06 sec)
+
+mysql> CREATE TABLE pack_animal (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20),
+    -> type varchar(20),
+    -> birthdate date,
+    -> skill varchar(200)
+    -> );
+Query OK, 0 rows affected (0,05 sec)
+
+mysql> CREATE TABLE animal (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20),
+    -> class varchar(20),
+    -> type varchar(20),
+    -> birthdate date,
+    -> skill varchar(200)
+    -> );
+Query OK, 0 rows affected (0,07 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_HumanFriends |
++------------------------+
+| animal                 |
+| camel                  |
+| cat                    |
+| dog                    |
+| donkey                 |
+| hamster                |
+| horse                  |
+| pack_animal            |
+| pet                    |
++------------------------+
+9 rows in set (0,00 sec)
+
+mysql> INSERT INTO cat (name, birthdate, skill)
+    -> VALUES
+    -> ('Whiskers', '2022-05-15', 'Sit'),
+    -> ('Whiskers', '2022-05-15', 'Pounce'),
+    -> ('Smudge', '2023-02-20', 'Sit'),
+    -> ('Smudge', '2023-02-20', 'Pounce'),
+    -> ('Smudge', '2023-02-20', 'Scratch'),
+    -> ('Oliver', '2023-06-30', 'Meow'),
+    -> ('Oliver', '2023-06-30', 'Scratch'),
+    -> ('Oliver', '2023-06-30', 'Jump');
+Query OK, 8 rows affected (0,06 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> select * from cat;
++----+----------+------------+---------+
+| id | name     | birthdate  | skill   |
++----+----------+------------+---------+
+|  1 | Whiskers | 2022-05-15 | Sit     |
+|  2 | Whiskers | 2022-05-15 | Pounce  |
+|  3 | Smudge   | 2023-02-20 | Sit     |
+|  4 | Smudge   | 2023-02-20 | Pounce  |
+|  5 | Smudge   | 2023-02-20 | Scratch |
+|  6 | Oliver   | 2023-06-30 | Meow    |
+|  7 | Oliver   | 2023-06-30 | Scratch |
+|  8 | Oliver   | 2023-06-30 | Jump    |
++----+----------+------------+---------+
+8 rows in set (0,00 sec)
+
+mysql> INSERT INTO dog (name, birthdate, skill)
+    -> VALUES
+    -> ('Fido', '2023-01-01', 'Sit'),
+    -> ('Fido', '2023-01-01', 'Stay'),
+    -> ('Fido', '2023-01-01', 'Fetch'),
+    -> ('Buddy', '2021-12-10', 'Sit'),
+    -> ('Buddy', '2021-12-10', 'Paw'),
+    -> ('Buddy', '2021-12-10', 'Bark'),
+    -> ('Bella', '2022-11-11', 'Sit'),
+    -> ('Bella', '2019-11-11', 'Stay'),
+    -> ('Bella', '2022-11-11', 'Roll');
+Query OK, 9 rows affected (0,02 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> select * from dog;
++----+-------+------------+-------+
+| id | name  | birthdate  | skill |
++----+-------+------------+-------+
+|  1 | Fido  | 2023-01-01 | Sit   |
+|  2 | Fido  | 2023-01-01 | Stay  |
+|  3 | Fido  | 2023-01-01 | Fetch |
+|  4 | Buddy | 2021-12-10 | Sit   |
+|  5 | Buddy | 2021-12-10 | Paw   |
+|  6 | Buddy | 2021-12-10 | Bark  |
+|  7 | Bella | 2022-11-11 | Sit   |
+|  8 | Bella | 2019-11-11 | Stay  |
+|  9 | Bella | 2022-11-11 | Roll  |
++----+-------+------------+-------+
+9 rows in set (0,00 sec)
+
+mysql> INSERT INTO hamster (name, birthdate, skill)
+    -> VALUES
+    -> ('Hammy', '2024-03-10', 'Roll'),
+    -> ('Hammy', '2024-03-10', 'Hide'),
+    -> ('Peanut', '2024-08-01', 'Roll'),
+    -> ('Peanut', '2024-08-01', 'Spin');
+Query OK, 4 rows affected (0,02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from hamster;
++----+--------+------------+-------+
+| id | name   | birthdate  | skill |
++----+--------+------------+-------+
+|  1 | Hammy  | 2024-03-10 | Roll  |
+|  2 | Hammy  | 2024-03-10 | Hide  |
+|  3 | Peanut | 2024-08-01 | Roll  |
+|  4 | Peanut | 2024-08-01 | Spin  |
++----+--------+------------+-------+
+4 rows in set (0,00 sec)
+
+mysql> INSERT INTO horse (name, birthdate, skill)
+    -> VALUES
+    -> ('Thunder', '2018-07-21', 'Trot'),
+    -> ('Thunder', '2018-07-21', 'Canter'),
+    -> ('Thunder', '2018-07-21', 'Gallop'),
+    -> ('Storm', '2017-05-05', 'Trot'),
+    -> ('Storm', '2017-05-05', 'Canter'),
+    -> ('Blaze', '2019-02-28', 'Trot'),
+    -> ('Blaze', '2019-02-28', 'Junp'),
+    -> ('Blaze', '2019-02-28', 'Gallop');
+Query OK, 8 rows affected (0,04 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> select * from horse;
++----+---------+------------+--------+
+| id | name    | birthdate  | skill  |
++----+---------+------------+--------+
+|  1 | Thunder | 2018-07-21 | Trot   |
+|  2 | Thunder | 2018-07-21 | Canter |
+|  3 | Thunder | 2018-07-21 | Gallop |
+|  4 | Storm   | 2017-05-05 | Trot   |
+|  5 | Storm   | 2017-05-05 | Canter |
+|  6 | Blaze   | 2019-02-28 | Trot   |
+|  7 | Blaze   | 2019-02-28 | Junp   |
+|  8 | Blaze   | 2019-02-28 | Gallop |
++----+---------+------------+--------+
+8 rows in set (0,00 sec)
+
+mysql> INSERT INTO donkey (name, birthdate, skill)
+    -> VALUES
+    -> ('Eeyore', '2020-09-18', 'Walk'),
+    -> ('Eeyore', '2020-09-18', 'Carry Load'),
+    -> ('Eeyore', '2020-09-18', 'Bray'),
+    -> ('Burro', '2022-01-23', 'Walk'),
+    -> ('Burro', '2022-01-23', 'Bray'),
+    -> ('Burro', '2022-01-23', 'Kick');
+Query OK, 6 rows affected (0,03 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from donkey;
++----+--------+------------+------------+
+| id | name   | birthdate  | skill      |
++----+--------+------------+------------+
+|  1 | Eeyore | 2020-09-18 | Walk       |
+|  2 | Eeyore | 2020-09-18 | Carry Load |
+|  3 | Eeyore | 2020-09-18 | Bray       |
+|  4 | Burro  | 2022-01-23 | Walk       |
+|  5 | Burro  | 2022-01-23 | Bray       |
+|  6 | Burro  | 2022-01-23 | Kick       |
++----+--------+------------+------------+
+6 rows in set (0,01 sec)
+
+mysql> INSERT INTO camel (name, birthdate, skill)
+    -> VALUES
+    -> ('Sundy', '2019-11-03', 'Walk'),
+    -> ('Sundy', '2019-11-03', 'Carry Load'),
+    -> ('Dune', '2021-12-12', 'Walk'),
+    -> ('Dune', '2021-12-12', 'Sit'),
+    -> ('Sahara', '2018-08-14', 'Walk'),
+    -> ('Sahara', '2018-08-14', 'Run');
+Query OK, 6 rows affected (0,01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from camel;
++----+--------+------------+------------+
+| id | name   | birthdate  | skill      |
++----+--------+------------+------------+
+|  1 | Sundy  | 2019-11-03 | Walk       |
+|  2 | Sundy  | 2019-11-03 | Carry Load |
+|  3 | Dune   | 2021-12-12 | Walk       |
+|  4 | Dune   | 2021-12-12 | Sit        |
+|  5 | Sahara | 2018-08-14 | Walk       |
+|  6 | Sahara | 2018-08-14 | Run        |
++----+--------+------------+------------+
+6 rows in set (0,00 sec)
+
+mysql> -- Задание: Объединить все созданные таблицы в одну, сохраняя информацию
+о принадлежности к исходным таблицам
+mysql> INSERT INTO pet (name, type, birthdate, skill)
+    -> select name, 'Cat' as type, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from cat GROUP BY name, birthdate UNION ALL
+    -> select name, 'Dog' as type, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from dog GROUP BY name, birthdate UNION ALL
+Query OK, 9 rows affected (0,02 sec)e, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from hamster GROUP BY name, birthdate;
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> select * from pet;
++----+----------+---------+------------+----------------------+
+| id | name     | type    | birthdate  | skill                |
++----+----------+---------+------------+----------------------+
+|  1 | Oliver   | Cat     | 2023-06-30 | Meow, Scratch, Jump  |
+|  2 | Smudge   | Cat     | 2023-02-20 | Sit, Pounce, Scratch |
+|  3 | Whiskers | Cat     | 2022-05-15 | Sit, Pounce          |
+|  4 | Bella    | Dog     | 2019-11-11 | Stay                 |
+|  5 | Bella    | Dog     | 2022-11-11 | Sit, Roll            |
+|  6 | Buddy    | Dog     | 2021-12-10 | Sit, Paw, Bark       |
+|  7 | Fido     | Dog     | 2023-01-01 | Sit, Stay, Fetch     |
+|  8 | Hammy    | Hamster | 2024-03-10 | Roll, Hide           |
+|  9 | Peanut   | Hamster | 2024-08-01 | Roll, Spin           |
++----+----------+---------+------------+----------------------+
+9 rows in set (0,00 sec)
+
+mysql> INSERT INTO pack_animal (name, type, birthdate, skill)
+    -> select name, 'Horse' as type, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from horse GROUP BY name, birthdate UNION ALL
+    -> select name, 'Donkey' as type, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from donkey GROUP BY name, birthdate UNION ALL
+    -> select name, 'Camel' as type, birthdate, GROUP_CONCAT(skill SEPARATOR ', ') from camel GROUP BY name, birthdate;
+Query OK, 8 rows affected (0,03 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> select * from pack_animal;
++----+---------+--------+------------+------------------------+
+| id | name    | type   | birthdate  | skill                  |
++----+---------+--------+------------+------------------------+
+|  1 | Blaze   | Horse  | 2019-02-28 | Trot, Junp, Gallop     |
+|  2 | Storm   | Horse  | 2017-05-05 | Trot, Canter           |
+|  3 | Thunder | Horse  | 2018-07-21 | Trot, Canter, Gallop   |
+|  4 | Burro   | Donkey | 2022-01-23 | Walk, Bray, Kick       |
+|  5 | Eeyore  | Donkey | 2020-09-18 | Walk, Carry Load, Bray |
+|  6 | Dune    | Camel  | 2021-12-12 | Walk, Sit              |
+|  7 | Sahara  | Camel  | 2018-08-14 | Walk, Run              |
+|  8 | Sundy   | Camel  | 2019-11-03 | Walk, Carry Load       |
++----+---------+--------+------------+------------------------+
+8 rows in set (0,00 sec)
+
+mysql> INSERT INTO animal (name, class, type, birthdate, skill)
+    -> select name, 'Pet' as class, type, birthdate, skill from pet UNION ALL
+    -> select name, 'Pack_animal' as class, type, birthdate, skill from pack_animal;
+Query OK, 17 rows affected (0,03 sec)
+Records: 17  Duplicates: 0  Warnings: 0
+
+mysql> select * from animal;
++----+----------+-------------+---------+------------+------------------------+
+| id | name     | class       | type    | birthdate  | skill                  |
++----+----------+-------------+---------+------------+------------------------+
+|  1 | Oliver   | Pet         | Cat     | 2023-06-30 | Meow, Scratch, Jump    |
+|  2 | Smudge   | Pet         | Cat     | 2023-02-20 | Sit, Pounce, Scratch   |
+|  3 | Whiskers | Pet         | Cat     | 2022-05-15 | Sit, Pounce            |
+|  4 | Bella    | Pet         | Dog     | 2019-11-11 | Stay                   |
+|  5 | Bella    | Pet         | Dog     | 2022-11-11 | Sit, Roll              |
+|  6 | Buddy    | Pet         | Dog     | 2021-12-10 | Sit, Paw, Bark         |
+|  7 | Fido     | Pet         | Dog     | 2023-01-01 | Sit, Stay, Fetch       |
+|  8 | Hammy    | Pet         | Hamster | 2024-03-10 | Roll, Hide             |
+|  9 | Peanut   | Pet         | Hamster | 2024-08-01 | Roll, Spin             |
+| 10 | Blaze    | Pack_animal | Horse   | 2019-02-28 | Trot, Junp, Gallop     |
+| 11 | Storm    | Pack_animal | Horse   | 2017-05-05 | Trot, Canter           |
+| 12 | Thunder  | Pack_animal | Horse   | 2018-07-21 | Trot, Canter, Gallop   |
+| 13 | Burro    | Pack_animal | Donkey  | 2022-01-23 | Walk, Bray, Kick       |
+| 14 | Eeyore   | Pack_animal | Donkey  | 2020-09-18 | Walk, Carry Load, Bray |
+| 15 | Dune     | Pack_animal | Camel   | 2021-12-12 | Walk, Sit              |
+| 16 | Sahara   | Pack_animal | Camel   | 2018-08-14 | Walk, Run              |
+| 17 | Sundy    | Pack_animal | Camel   | 2019-11-03 | Walk, Carry Load       |
++----+----------+-------------+---------+------------+------------------------+
+17 rows in set (0,00 sec)
+
+mysql> -- Задание: Создать новую таблицу для животных в возрасте от 1 до 3 лет и вычислить их возраст с точностью до месяца.
+mysql> CREATE TABLE young (
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(20),
+    -> class varchar(20),
+    -> type varchar(20),
+    -> birthdate date,
+    -> age varchar(30),
+    -> skill varchar(200)
+    -> );
+Query OK, 0 rows affected (0,07 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_HumanFriends |
++------------------------+
+| animal                 |
+| camel                  |
+| cat                    |
+| dog                    |
+| donkey                 |
+| hamster                |
+| horse                  |
+| pack_animal            |
+| pet                    |
+| young                  |
++------------------------+
+10 rows in set (0,00 sec)
+
+mysql> INSERT INTO young (name, class, type, birthdate, skill, age)
+    -> select 
+    -> name, 
+    -> class, 
+    -> type, 
+    -> birthdate, 
+    -> skill, 
+    -> CONCAT (
+    -> FLOOR((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) / 12)), ' г ',
+    -> MOD(TIMESTAMPDIFF(MONTH, birthdate, CURDATE()), 12) , ' м') AS age 
+    -> from animal WHERE TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) BETWEEN 1 AND 2;
+Query OK, 5 rows affected (0,02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from young;
++----+----------+-------+------+------------+-----------+----------------------+
+| id | name     | class | type | birthdate  | age       | skill                |
++----+----------+-------+------+------------+-----------+----------------------+
+|  1 | Oliver   | Pet   | Cat  | 2023-06-30 | 1 г 8 м   | Meow, Scratch, Jump  |
+|  2 | Smudge   | Pet   | Cat  | 2023-02-20 | 2 г 0 м   | Sit, Pounce, Scratch |
+|  3 | Whiskers | Pet   | Cat  | 2022-05-15 | 2 г 9 м   | Sit, Pounce          |
+|  4 | Bella    | Pet   | Dog  | 2022-11-11 | 2 г 3 м   | Sit, Roll            |
+|  5 | Fido     | Pet   | Dog  | 2023-01-01 | 2 г 2 м   | Sit, Stay, Fetch     |
++----+----------+-------+------+------------+-----------+----------------------+
+5 rows in set (0,00 sec)
+
+mysql> -- Задание: Удалить записи о верблюдах и объединить таблицы лошадей и ослов
+mysql> DELETE FROM pack_animal WHERE type = 'Camel';
+Query OK, 3 rows affected (0,01 sec)
+
+mysql> select * from pack_animal;
++----+---------+--------+------------+------------------------+
+| id | name    | type   | birthdate  | skill                  |
++----+---------+--------+------------+------------------------+
+|  1 | Blaze   | Horse  | 2019-02-28 | Trot, Junp, Gallop     |
+|  2 | Storm   | Horse  | 2017-05-05 | Trot, Canter           |
+|  3 | Thunder | Horse  | 2018-07-21 | Trot, Canter, Gallop   |
+|  4 | Burro   | Donkey | 2022-01-23 | Walk, Bray, Kick       |
+|  5 | Eeyore  | Donkey | 2020-09-18 | Walk, Carry Load, Bray |
++----+---------+--------+------------+------------------------+
+5 rows in set (0,00 sec)
+
+mysql> exit
+Bye
